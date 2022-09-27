@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/98a50fb53a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Computer Store</title>
+  </head>
+  <body>
+    <dialog class="dialog">
+      <div class="card__banner">Enter Product Information</div>
+      <form class="changeTaskForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" maxlength="25" />
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          rows="3"
+          cols="8"
+          name="description"
+          maxlength="100"
+          style="resize: none"
+        ></textarea>
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" maxlength="25" />
+        <label for="price">Price</label>
+        <input type="text" id="price" name="price" maxlength="25" />
+        <label for="rating">Rating</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" />
+        <button type="submit" class="btn-primary" id="changeTaskFormSubmit" data-type="POST">Submit</button>
+        <button type="submit" class="btn-primary hidden" id="formSubmit" data-type="PUT">
+          Submit
+        </button>
+      </form>
+    </dialog>
+    <h1 class="main-heading">Store Portal</h1>
+    <main class="main">
+      <section class="filters flow">
+        <h2>Filters</h2>
+        <div class="selection-bar">
+          <div class="selection-value" sel="true"><p>Category</p></div>
+          <div class="selection-value" sel="false"><p>ID</p></div>
+          <div class="indicator"></div>
+        </div>
+        <form class="filter-form">
+        <input
+          type="text"
+          name="selection-value"
+          id="selection-value"
+          placeholder="Enter filter name"
+          style="display: block"
+        />
+        <input type="hidden" name="selection-type" id="selection-type" value="Category">
+        <button class="btn-primary filter-submit">Add Filter</button>
+      </form>
+      </section>
+      <section class="products flow--sm">
+        <h2>All Products</h2>
+        <div class="active-filters hidden">
+          <div class="active-filters-display"></div>
+          <p class="remove-filters">Remove Filters</p>
+        </div>
+        <div class="products-table">
+          <div class="products-table-heading grid grid-cols-table">
+            <h3 class="subhead">Name</h3>
+            <h3 class="subhead">Category</h3>
+            <h3 class="subhead">Description</h3>
+            <div>
+              <h3 class="subhead">Price <span class="price-filter"><i class="fa-solid fa-chevron-down chevron-filter"></i></span></h3>
+              <!-- drop down arrow -->
+            </div>
+            <h3 class="subhead">Rating</h3>
+            <h3 class="subhead">Actions</h3>
+          </div>
+          <div class="products-list">
+            <!-- <div class="product grid grid-cols-table">
+              <p>RTX 3090</p>
+              <p>GPU</p>
+              <p>A very powerful GPU</p>
+              <p>1700</p>
+              <p>5</p>
+              <p></p> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <button class="btn-primary btn-add-product">Add Product</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
